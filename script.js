@@ -23,10 +23,25 @@ res.then((data)=>data.json())
 
 // Fetch in async
 
-async function apicall() {
+/* async function apicall() {
     const res=await fetch("https://jsonplaceholder.typicode.com/users");
     const data=await res.json();
     console.log(data);
     
+}
+apicall()
+ */
+
+//fetch with error handling
+
+async function apicall(){
+    try {
+        const res=await fetch("https://jsonplaceholder.typicode.com/users");
+        const data=await res.json();
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
 apicall()
