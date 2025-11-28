@@ -34,7 +34,7 @@ apicall()
 
 //fetch with error handling
 
-async function apicall(){
+/* async function apicall(){
     try {
         const res=await fetch("https://jsonplaceholder.typicode.com/users");
         const data=await res.json();
@@ -42,6 +42,28 @@ async function apicall(){
     } catch (error) {
         console.log(error);
         
+    }
+}
+apicall() */
+
+//json print with using loop
+
+async function apicall() {
+    try {
+        const res=await fetch("https://jsonplaceholder.typicode.com/users");
+        const data=await res.json();
+        for(let i=0;i<data.length;i++){
+            console.log(data[i].id);
+            console.log(data[i].name);
+              console.log(data[i].email);
+                console.log(data[i].phone);
+                  console.log(data[i].address.city);
+                    console.log(data[i].address.zipcode);
+                      console.log(data[i].company.name);
+                        console.log(data[i].website);
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 apicall()
